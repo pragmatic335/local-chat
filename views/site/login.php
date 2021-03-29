@@ -44,4 +44,22 @@ $this->params['breadcrumbs'][] = $this->title;
         You may login with <strong>admin/admin</strong> or <strong>demo/demo</strong>.<br>
         To modify the username/password, please check out the code <code>app\models\User::$users</code>.
     </div>
+
+    <?php
+    $this->registerJs("
+    $( \"#loginform-rememberme\" ).click(function(){ 
+	   var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.status);
+            }
+        };
+        xmlhttp.open(\"GET\", \"site/login?test=1234\", true);
+        xmlhttp.send();          
+         
+	  });
+    
+        
+");
+   ?>
 </div>
