@@ -1,3 +1,14 @@
+#massager {
+    padding-top: 2vh;
+    height: 98vh;
+    width: 100%;
+}
+
+#context {
+    background: #2aabd2;
+    height: 95vh;
+}
+
 .user {
     background-color: white;
     height: 50px;
@@ -5,8 +16,9 @@
     border-radius: 5px;
     padding-left: 5px;
     padding-right: 5px;
-    /*border-top: 2px solid;*/
-    border: 2px solid whitesmoke;
+    border-top: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    /*border: 2px solid whitesmoke;*/
     /*border-color: whitesmoke;*/
     margin-bottom: 10px;
     margin-top: 10px;
@@ -24,5 +36,9 @@
 .usernick {
     color: #95999c !important;
 }
+
+
+
+
 
 
