@@ -1,0 +1,17 @@
+#progmatik-massager {
+    height: 550px;
+    width: 550px;
+    background-color: #8fd19e;
+    position: fixed;
+    z-index: 1000000;
+    bottom: 0;
+    right: 20%;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    transition: 400ms;
+}
+
+.progmatik-massager-delay {
+
+}
+

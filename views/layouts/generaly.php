@@ -10,6 +10,7 @@ use yii\bootstrap4\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
+
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -25,10 +26,13 @@ AppAsset::register($this);
 </head>
 <body>
 
+<?php $this->beginBody() ?>
+<?php
+echo \app\widgets\Chat::widget();
+?>
 <div id="massager">
 
     <div id="context" class="container-xl">
-        <?php $this->beginBody() ?>
         <?= $content ?>
     </div>
 
