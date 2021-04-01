@@ -2,11 +2,13 @@
 //     console.log('hello world');
 // });
 
-document.getElementById('progmatik-massager').onclick = function(event) {
-    if(this.style.height == '550px') {
-        this.style.height = '40px'
+document.getElementById('prog-massager').onclick = function(event) {
+    if(window.getComputedStyle( this, null ).height == '400px') {
+        this.style.height = '30px';
     }
     else {
-        this.style.height = '550px'
+        this.style.height = '400px';
     }
+
+
 };
