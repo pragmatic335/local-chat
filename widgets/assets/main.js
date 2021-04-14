@@ -5,10 +5,10 @@
 document.getElementById('prog-marker').onclick = function(event) {
     let content = document.getElementById('prog-content');
 
-    if(window.getComputedStyle( content, null ).width == '700px') {
+    if(window.getComputedStyle( content, null ).width == '1000px') {
         content.style.width = '0px';
     }
     else {
-        content.style.width = '700px';
+        content.style.width = '1000px';
     }
 };

@@ -33,17 +33,30 @@
 
         <div id="prog-user-window">
             <div id="prog-user-rooms">
-                <div class="prog-user">
+                <div class="prog-user prog-active">
                     <i class="fa fa-circle" style='font-size: 15px; color: chartreuse;'></i>
-                    <h5 style="margin-top: 5px;">Общая комната</h5>
+                    <h6 style="margin-top: 5px; word-break: break-all; margin-left: 15px;">Общая комната</h6>
                 </div>
                 <div class="prog-user">
                     <i class="fa fa-circle" style='font-size: 15px; color: orangered;'></i>
-                    <h5 style="margin-top: 5px;">Марина</h5>
+                    <h6 style="margin-top: 5px; word-break: break-all; margin-left: 15px;">Марина Лам</h6>
                 </div>
+
+
+
+
+
+
+
+
             </div>
             <div id="prog-user-messages">
+                <div id="prog-message">
 
+                </div>
+                <div id="prog-input">
+                    <textarea name="textarea" rows="3" cols="50" style="border: none; width: 650px">Write something here</textarea>
+                </div>
             </div>
         </div>
     </div>
