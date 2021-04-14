@@ -1,41 +1,41 @@
-#massager {
-    padding-top: 2vh;
-    height: 98vh;
-    width: 100%;
-}
+/*#massager {*/
+/*    padding-top: 2vh;*/
+/*    height: 98vh;*/
+/*    width: 100%;*/
+/*}*/
 
-#context {
-    background: #2aabd2;
-    height: 95vh;
-}
+/*#context {*/
+/*    background: #2aabd2;*/
+/*    height: 95vh;*/
+/*}*/
 
-.user {
-    background-color: white;
-    height: 50px;
-    min-width: 100px;
-    border-radius: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-top: 2px solid whitesmoke;
-    border-bottom: 2px solid whitesmoke;
-    /*border: 2px solid whitesmoke;*/
-    /*border-color: whitesmoke;*/
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
+/*.user {*/
+/*    background-color: white;*/
+/*    height: 50px;*/
+/*    min-width: 100px;*/
+/*    border-radius: 5px;*/
+/*    padding-left: 5px;*/
+/*    padding-right: 5px;*/
+/*    border-top: 2px solid whitesmoke;*/
+/*    border-bottom: 2px solid whitesmoke;*/
+/*    !*border: 2px solid whitesmoke;*!*/
+/*    !*border-color: whitesmoke;*!*/
+/*    margin-bottom: 10px;*/
+/*    margin-top: 10px;*/
+/*}*/
 
-.indicator {
-    background-color: #32CD32;
-    border-radius: 15px;
-    width: 10px;
-    height: 10px;
-    margin: 0;
-    padding: 0;
-}
+/*.indicator {*/
+/*    background-color: #32CD32;*/
+/*    border-radius: 15px;*/
+/*    width: 10px;*/
+/*    height: 10px;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
 
-.usernick {
-    color: #95999c !important;
-}
+/*.usernick {*/
+/*    color: #95999c !important;*/
+/*}*/
 
 
 

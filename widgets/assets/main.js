@@ -2,13 +2,13 @@
 //     console.log('hello world');
 // });
 
-document.getElementById('prog-massager').onclick = function(event) {
-    if(window.getComputedStyle( this, null ).height == '400px') {
-        this.style.height = '30px';
+document.getElementById('prog-marker').onclick = function(event) {
+    let content = document.getElementById('prog-content');
+
+    if(window.getComputedStyle( content, null ).width == '700px') {
+        content.style.width = '0px';
     }
     else {
-        this.style.height = '400px';
+        content.style.width = '700px';
     }
-
-
 };
