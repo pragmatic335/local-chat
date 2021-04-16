@@ -4,10 +4,10 @@
         <i class="fa fa-comments-o" style='font-size: 42px'></i>
     </div>
 
-    <div class="prog-content">
+    <div id="prog-auth-form" class="prog-content">
         <div class="prog-sing-in">
             <h2>ПРОГМАТИК</h2>
-            <input id="" type="text">
+            <input id="prog-auth" type="text">
         </div>
 
     </div>

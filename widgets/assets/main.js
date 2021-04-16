@@ -1,20 +1,6 @@
 // document.getElementById('progmatik-massager').on('click', function(event) {
 //     console.log('hello world');
 // });
-
-const ws = new WebSocket('ws://172.16.0.114:8001');
-
-ws.onopen = function() {
-    console.log("Соединение установлено.");
-};
-
-ws.onmessage = response => {
-    let data = (response.data);
-    console.log(data);
-};
-
-
-
 document.getElementById('prog-marker').onclick = function(event) {
     let content = document.getElementsByClassName('prog-content')[0];
 
