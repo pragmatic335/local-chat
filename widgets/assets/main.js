@@ -2,12 +2,17 @@
 //     console.log('hello world');
 // });
 document.getElementById('prog-marker').onclick = function(event) {
-    let content = document.getElementsByClassName('prog-content')[0];
+    let content = document.getElementsByClassName('prog-content');
 
-    if(window.getComputedStyle( content, null ).width == '1000px') {
-        content.style.width = '0px';
+    for (let i = 0; i < content.length; i++) {
+
+        if(window.getComputedStyle(content[i], null ).width == '1000px') {
+            content[i].style.width = '0px';
+        }
+        else {
+            content[i].style.width = '1000px';
+        }
     }
-    else {
-        content.style.width = '1000px';
-    }
+
+
 };

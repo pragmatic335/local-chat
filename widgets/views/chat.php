@@ -12,7 +12,7 @@
 
     </div>
 
-    <div  class="prog-content prog-hide">
+    <div id="prog-main" class="prog-content prog-hide">
 
         <div id="prog-tools-bar">
             <i class="fa fa-bell-o"></i>
