@@ -195,6 +195,13 @@
      box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
  }
 
+ .prog-offline {
+     font-size: 15px; color: orangered;
+ }
+
+.prog-online {
+    font-size: 15px; color: limegreen;
+}
 
 /*textarea:focus{*/
 /*    border: 1px solid red;*/

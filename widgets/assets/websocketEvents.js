@@ -1,40 +1,72 @@
-const ws = new WebSocket('ws://127.0.0.1:8001');
+/**
+ * Коды событий
+ * 1 - авторизация
+ * 2 - неудачная попытка авторизации
+ * 11 - получение списка всех пользователей чата
+ */
+
+const ws = new WebSocket('ws://172.16.0.114:8001');
 
 ws.onopen = function() {
     console.log("Соединение установлено.");
-    let cook = document.cookie;
-    if(cook) {
-        let username = cook.split('=')[1];
-        let request = {
-            status: 1,
-            name: username,
-            message: 'hi'
-        };
-        // console.log(ws)
-        ws.send(JSON.stringify(request));
+    let cooks = document.cookie;
+
+    //при очередном коннекте, ищем куку с нужным именем пользователя и отправляем его на авторизацию
+    if(cooks) {
+        let arrCooks = cooks.split(';');
+
+        let request;
+
+        let cookName;
+        let cookValue;
+
+        for (let i = 0; i < arrCooks.length; i++) {
+            cookName = arrCooks[i].split('=')[0];
+            cookValue = arrCooks[i].split('=')[1];
+
+            if(cookName === 'progname') {
+                request = {
+                    status: 1,
+                    name: cookValue,
+                    message: 'hi'
+                };
+                ws.send(JSON.stringify(request));
+                break;
+            }
+        }
+
     }
 };
 
 ws.onmessage = response => {
+    //todo ошибка, поправить
     let data = JSON.parse(response.data);
 
-    if(data.code == 2) {
+    //если пользователя нет в базе, кидаем предупреждение
+    if (data.code === 2) {
         alert('Неверное имя пользователя. Обратитесь в службу поддрежки');
     }
 
-    if(data.code == 1) {
-        // специальные символы (пробелы), требуется кодирование
-        // let name = "name";
-        // let value = data.name;
+    //если пользователь авторизован
+    if (data.code === 1) {
+        document.cookie = 'progname=' + data.name + ';max-age=60';
 
-        // document.cookie = encodeURIComponent(name) + '=' + encodeURIComponent(value) + ';max-age=20';
-        document.cookie = 'name=' + data.name +';max-age=600';
-
-        // alert(document.cookie);
         let auth = document.getElementById('prog-auth-form');
         auth.classList.add('prog-hide');
 
         let main = document.getElementById('prog-main');
         main.classList.remove('prog-hide');
+    }
+
+    //получаем список всех пользователей с последующим добавлением их в меню
+    if (data.code === 11) {
+        let users = document.getElementById('prog-user-rooms');
+
+        for (let i = 0; i < data.names.length; i++) {
+            users.innerHTML += '<div class="prog-user">\n' +
+                '                    <i class="fa fa-circle prog-online"></i>\n' +
+                '                    <h6 style="margin-top: 5px; word-break: break-all; margin-left: 15px;">' + data.names[i] +'</h6>\n' +
+                '                </div>';
+        }
     }
 };
