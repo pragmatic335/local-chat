@@ -1,4 +1,3 @@
-
 document.getElementById('prog-auth').addEventListener('keydown', function(e) {
     if (e.keyCode === 13) {
         let request = {

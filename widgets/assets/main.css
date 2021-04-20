@@ -148,9 +148,10 @@
      box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
  }
 
- #prog-message {
+ .prog-message {
      width: 750px;
      height: 450px;
+
      background-color: white;
      overflow: auto;
  }
@@ -174,6 +175,27 @@
      margin-left: 400px;
      margin-top: 250px;
  }
+
+ .prog-message-instance {
+
+     margin:15px 30px;
+
+     /*margin-left: 30px;*/
+     /*margin-right: 30px;*/
+
+     padding-left: 20px;
+     padding-right: 20px;
+
+     background-color: #f5f5f5;
+
+     border: 1px solid #e5e5e5;
+     border-radius: 10px;
+     -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+     -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+     box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+ }
+
+
 /*textarea:focus{*/
 /*    border: 1px solid red;*/
 /*}*/

@@ -1,6 +1,7 @@
 // document.getElementById('progmatik-massager').on('click', function(event) {
 //     console.log('hello world');
 // });
+
 document.getElementById('prog-marker').onclick = function(event) {
     let content = document.getElementsByClassName('prog-content');
 
