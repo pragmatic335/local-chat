@@ -19,14 +19,14 @@ function moveContent() {
  * При клике на иконку чата - открытие/закрытие
  */
 document.getElementById('prog-marker').onclick = function(event) {
-    hideFormContent();
+    moveContent();
 };
 
 /**
  * Разлогирование пользователя
  */
 document.getElementById('prog-out').onclick = function(event) {
-    document.cookie = 'progname=' + '' + ';max-age=-1';
+    document.cookie = 'proname=' + '' + ';max-age=-1';
 
     let main = document.getElementById('prog-main');
     main.classList.add('prog-hide');

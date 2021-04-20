@@ -3,19 +3,19 @@
  * 1 - авторизация
  * 2 - неудачная попытка авторизации
  * 11 - получение списка всех пользователей чата
+ * 200 - получение сообщений для глобального чата
  */
 
-const ws = new WebSocket('ws://172.16.0.114:8001');
+const ws = new WebSocket('ws://127.0.0.1:8001');
 
 ws.onopen = function() {
     console.log("Соединение установлено.");
     let cooks = document.cookie;
+    let request;
 
     //при очередном коннекте, ищем куку с нужным именем пользователя и отправляем его на авторизацию
     if(cooks) {
         let arrCooks = cooks.split(';');
-
-        let request;
 
         let cookName;
         let cookValue;
@@ -24,7 +24,7 @@ ws.onopen = function() {
             cookName = arrCooks[i].split('=')[0];
             cookValue = arrCooks[i].split('=')[1];
 
-            if(cookName === 'progname') {
+            if(cookName.trim() === 'proname') {
                 request = {
                     status: 1,
                     name: cookValue,
@@ -34,8 +34,13 @@ ws.onopen = function() {
                 break;
             }
         }
-
     }
+
+    request = {
+        status: 200,
+    };
+    ws.send(JSON.stringify(request));
+
 };
 
 ws.onmessage = response => {
@@ -49,7 +54,7 @@ ws.onmessage = response => {
 
     //если пользователь авторизован
     if (data.code === 1) {
-        document.cookie = 'progname=' + data.name + ';max-age=60';
+        document.cookie = 'proname=' + data.name + ';max-age=1230';
 
         let auth = document.getElementById('prog-auth-form');
         auth.classList.add('prog-hide');
@@ -69,4 +74,31 @@ ws.onmessage = response => {
                 '                </div>';
         }
     }
+
+    if(data.code === 200) {
+        let blockmessage = document.getElementById('prog-message')
+        for (let i = 0; i < data.messages.length; i++) {
+            blockmessage.innerHTML += '<div class="prog-message-instance">\n' +
+                '                        <div>\n' +
+                '                            ' + data.messages[i][0] + '\n' +
+                '                        </div>\n' +
+                '                       <div class="prog-createdata">от ' + data.messages[i][1] + ' ' + data.messages[i][2] + '</div>\n' +
+                '                    </div>';
+        }
+    }
+
+    if(data.code === 500) {
+        let blockmessage = document.getElementById('prog-message')
+        blockmessage.innerHTML='';
+
+        for (let i = 0; i < data.messages.length; i++) {
+            blockmessage.innerHTML += '<div class="prog-message-instance">\n' +
+                '                        <div>\n' +
+                '                            ' + data.messages[i][0] + '\n' +
+                '                        </div>\n' +
+                '                       <div class="prog-createdata">от ' + data.messages[i][1] + ' ' + data.messages[i][2] + '</div>\n' +
+                '                    </div>';
+        }
+    }
+
 };

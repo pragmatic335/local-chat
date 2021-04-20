@@ -178,6 +178,8 @@
 
  .prog-message-instance {
 
+     display: flex;
+     flex-direction: column;
      margin:15px 30px;
 
      /*margin-left: 30px;*/
@@ -207,8 +209,17 @@
 /*    border: 1px solid red;*/
 /*}*/
 
+#prog-out, #prog-bell {
+    transition: 100ms;
+}
 
+#prog-out:hover, #prog-bell:hover {
+    font-size: 40px;
+}
 
+.prog-createdata {
+    font-size: 15px; font-style: italic; text-align:right; font-weight: lighter;
+}
 
 
 

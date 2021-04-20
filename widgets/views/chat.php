@@ -15,7 +15,7 @@
     <div id="prog-main" class="prog-content prog-hide">
 
         <div id="prog-tools-bar">
-            <i class="fa fa-bell-o"></i>
+            <i id="prog-bell" class="fa fa-bell-o"></i>
             <i id="prog-out" class="fa fa-sign-out"></i>
         </div>
         <div id="prog-user-window">
@@ -26,27 +26,11 @@
                 </div>
             </div>
             <div id="prog-user-messages">
-                <div class="prog-message">
-                    <div class="prog-message-instance">
-                        <p>ПРиветпше ?</p>
-                    </div>
-                    <div class="prog-message-instance">
-                        <div>
-                            ПРивет Как дела что делашешь почему сегодня не рпидешь?ПРивет Как дела чт
-                            о делашешь почему сегодня не рпидешь?ПРивет Как дела что делашешь почему сегодня не рп
-                            идешь?ПРивет Как дела что делашешь почему сегодня не рпидешь?ПРив
-                            ет Как дела что делашешь почему сегодня не рпидешь?
-                        </div>
-                       <div style="font-size: 15px; font-style: italic">от Марины 13 мая 2021 13:12</div>
+                <div id="prog-message" class="prog-message">
 
-
-                    </div>
-
-<!--                    <h5>Марина</h5>-->
-<!--                    <p>ПРивет Как дела что делашешь почему сегодня не рпидешь?ПРивет Как дела что делашешь почему сегодня не рпидешь?ПРивет Как дела что делашешь почему сегодня не рпидешь?ПРивет Как дела что делашешь почему сегодня не рпидешь?ПРивет Как дела что делашешь почему сегодня не рпидешь?</p>-->
                 </div>
                 <div id="prog-input">
-                    <textarea name="textarea" rows="3" cols="50" style="border: none; width: 650px">Write something here</textarea>
+                    <input id="prog-input-now" name="text" style="border: 1px solid #e5e5e5; border-radius: 5px;width: 650px; margin-top: 10px;"></input>
                 </div>
             </div>
         </div>
